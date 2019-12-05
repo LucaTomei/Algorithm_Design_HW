@@ -382,8 +382,8 @@ The problem can be represented with a Graph $G$ in which there are:
 	\item One Sink, that is the arrival node of the network
 \end{itemize}
 %For every friend of Federico there will be two nodes because between the two nodes of the friend there will be an edge with capacity the number of chocolates that a friend can manage.\\
-For every friend of Federico's, there will be two nodes among which there will be an edge with a capacity equal to the number of chocolates $n_f$ that a friend can handle.\\
-Considering two friends, all the nodes must go from the second node of the first friend to the first node of the second friend and the capacity of the edge must always be $n_f$, with $f$ the number of the friend of arrival.\\
+For every Federico's friend, there will be two nodes among which there will be an edge with a capacity equal to the number of chocolates $n_f$ that a friend can handle.\\
+Considering two friends, all the nodes must go from the second node of the first friend to the first node of the second friend and the capacity of the edge must always be $n_f$, with $f$ the number of the arrival friend.\\
 The Graph is build in this way:
 \begin{enumerate}
 	\setlength{\itemsep}{1pt}
@@ -456,7 +456,7 @@ The Graph is build in this way:
 
 \noindent\dotfill
 \\In the second part of the exercise, are added some restritions that limit the weekly quantity of chocolate sold there in $c_B$.\\ To deal with this problem, some changes will be made to the main model adding a node to each building.\\
-For each building, a node with only one outgoing edge of capacity $c_B$ is added to the sink and all other friends who sell associated with this building have an edge towards the node associated with that building of capacity $s_f$. To add the buildings to the problem formulation just add this definition to the previous graph and to find the number of chocolates to sell, you can use the \textit{Ford Fulkerson} algorithm, which is a \textit{$max_flow$} algorithm that allows to find the maximum flow that crosses a graph from one point to another of this.\\
+For each building, a node with only one outgoing edge of capacity $c_B$ is added to the sink and all other friends who sell associated with this building have an edge towards the node associated with that building of capacity $s_f$. To add the buildings to the problem formulation just add this definition to the previous graph and to find the number of chocolates to sell, you can use the \textit{Ford Fulkerson} algorithm, which is a \textit{max flow} algorithm that allows to find the maximum flow that crosses a graph from one point to another of this.\\
 
 For the second part of this exercise points 1-4 must be repeated and:
 \begin{enumerate}
