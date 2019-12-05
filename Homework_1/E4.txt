@@ -1,0 +1,19 @@
+Giovanni has only k free hours until the huge party he is planning. He is now noticing that a lot of work still needs to be done. For example, invitations have to be sent, finishing up the decoration will take some hours, different food has to be prepared, more chairs have to be brought to the room, et cetera. For each of the n tasks in the task set J, he knows both an earliest time s j to start task j, a deadline d j when it has to be finished, and the length l j ∈ N that specifies how long it will take a single person to do task j. Tasks, once started, cannot be paused and then finished later.
+He has summed up all the l j , and found P out that just judging by those, he should be able
+to finish by the time the party starts, i.e. t∈T l j ≤ k. Now, he asks you to help with the
+matter. Your options are as follows: Either you and some others help him do the work, or,
+clearly preferable: You convince him he can do it alone. For that, you would need to find a way
+to order the jobs that will allow him to finish everything in time. You have had a quick glance
+at the very long TO-DO-list and are in doubt if you even should start looking for a feasible
+one-person-solution. Prove that indeed, the question if one exists is (in general) not one you
+can expect to solve with a quick algorithm
+
+
+Giovanni ha solo k ore libere fino alla grande festa che sta organizzando. Ora sta notando che molto lavoro deve ancora essere fatto. Ad esempio, gli inviti devono essere inviati, il completamento della decorazione richiederà alcune ore, il cibo diverso deve essere preparato, più sedie devono essere portate nella stanza, eccetera. Per ognuna delle n attività nel set di attività J, conosce sia una prima volta sj per avviare l'attività j, una scadenza dj quando deve essere terminata, sia la lunghezza lj ∈ N che specifica quanto tempo impiegherà una singola persona per eseguire l'attività j. Le attività, una volta avviate, non possono essere messe in pausa e poi terminate in seguito.
+Ha riassunto tutti i j, e ha scoperto P che a giudicare da quelli, dovrebbe essere in grado
+per finire quando inizia la festa, ovvero t∈T l j ≤ k. Ora ti chiede di aiutare con il
+importa. Le tue opzioni sono le seguenti: O tu e alcuni altri lo aiutate a fare il lavoro, oppure,
+chiaramente preferibile: lo convinci che può farlo da solo. Per questo, dovresti trovare un modo
+per ordinare i lavori che gli consentiranno di finire tutto in tempo. Hai avuto una rapida occhiata
+alla lunghissima TO-DO-list e sono in dubbio se dovresti anche iniziare a cercare un fattibile
+una sola persona-soluzione. Dimostra che, in effetti, la domanda se ne esiste una (in generale) non è una domanda che puoi aspettarti di risolvere con un algoritmo rapido.

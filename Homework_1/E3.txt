@@ -1,0 +1,13 @@
+Federico si occupa ora di deliziosi cioccolatini, che produce in casa. 
+ Ha una complicata rete di distribuzione istituita all'università per vendere la sua merce, ma ognuno dei suoi amici f∈F è disposto a gestire un importo fisso n_f ogni settimana. 
+ Lui sa per ogni coppia (f1, f2) ∈ F se queste due persone si vedono regolarmente e, naturalmente, sa anche se li incontrerà di persona o meno. 
+ Infine, alcuni dei suoi amici sono in grado di vendere un importo fisso s_f ≤ n_f ai clienti ogni settimana, ma possono consegnare il resto solo ad altre persone. 
+
+ a) Modella il problema come un problema di flusso in un grafico G, costituito solo da vertici regolari, una sorgente, un arrivo (sink) e bordi capacitivi per scoprire quanti cioccolatini Federico dovrebbe effettivamente fare ogni settimana. Fornisci una definizione formale della tua rete e disegna anche un piccolo esempio, ad es. per | F | = 4. 
+
+ b) Nel nuovo semestre, ogni amico nella rete di Federico frequenterà i corsi in un determinato edificio, secondo il rispettivo campo di studio, cioè ogni f ∈ F avrà un edificio associato b_f ∈ B, dove B sono tutti gli edifici universitari. Federico è preoccupato che ciò influenzerà le sue vendite, poiché in ogni edificio b ∈ B, ci sarà solo un certo numero regolare di clienti disponibili, limitando la quantità settimanale di cioccolato venduto lì a cb. Modifica la tua rete con le restrizioni aggiunte per scoprire se e in che modo ciò influisce sul business di Federico.
+
+
+Amico: f ∈ al gruppo di tutti gli amici F
+Ogni amico (f) gestisce un importo fisso (n_f/settimana)
+Alcuni dei suoi amici vendono ad un importo fisso s_f <= n_f
