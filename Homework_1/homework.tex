@@ -78,7 +78,7 @@
 \linespread{1.1}
 
 \pagestyle{fancy}
-\lhead{\hmwkAuthorName}
+\lhead{\textbf{Luca Tomei} $\ $- $\ $\textbf{Andrea Aurizi}}
 %\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle}
 \chead{\hmwkClass : \hmwkTitle}
 \rhead{\firstxmark}
@@ -139,7 +139,6 @@
 %   - Instructor
 %   - Author
 %
-
 \newcommand{\hmwkTitle}{Homework\ \#1}
 \newcommand{\hmwkDueDate}{December 5, 2019}
 \newcommand{\hmwkClass}{Algorithm Design}
@@ -159,7 +158,7 @@
     \vspace{3in}
 }
 
-\author{\hmwkAuthorName}
+\author{\textbf{Luca Tomei} \and \textbf{Andrea Aurizi}}
 \date{}
 
 \renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
@@ -306,7 +305,7 @@ class FirstEx:
                 self.matrix[p][i] = round(max(p - self.cost[i], ex_val),4)
         return self.matrix
 \end{lstlisting}
-To calculate the value of an optimal solution for the problem instance, it was decided to write the Bellman equation associated with the dynamic programming solution:
+To calculate the value of an optimal solution for the problem instance, it was decided to write the Bellman equation associated to the dynamic programming solution:
 {\small\[ OPT(i, j) =  
 \begin{cases}
  -c_i + (j + 1) \cdot \frac{j}{n + 1} + \sum\limits_{x = j + 1}^n{\frac{x}{n + 1}} & \text{ if } i = k - 1 \\[3mm]
@@ -334,9 +333,9 @@ def E1_b(self): #   O(N * K)
         return self.matrix	
 \end{lstlisting}
 
-At each iteration the algorithm must be able to decide whether it is better to accept the current gain or try its luck by opening the subsequent boxes by comparing $i$, the current gain, and the sum calculated with the previous points which represents the expected gain.Arriving at the penultimate box, you need to make a maximum transaction between the two, which is the gain before opening the current case, and the subsequent ones, which is the gain you expect by opening this case and the next.\\
-Applying this reasoning recursively for all the columns of the matrix, in the case of the case $k-1$th the maximum value i will be greater than the sum calculated with the previous points. At this point, instead of going ahead and continuing to open the boxes, it is advisable to keep the current value and not pay the cost of the $k-1$ box.\\
-To visualize the result of the problem, it will be enough to print on screen the content of $matrix[0][0]$.
+At each iteration the algorithm must be able to decide whether it is better to accept the current gain or try its luck by opening the subsequent boxes by comparing $i$, the current gain, and the sum calculated with the previous step which represents the expected gain. Arriving at the penultimate box, you need to make a maximum transaction between both, which is the gain before opening the current box, and the subsequent ones, which is the gain you expect by opening this box and the next one.\\
+Applying this reasoning recursively for all the columns of the matrix, in the  $k-1$th box the maximum value it will be greater than the sum calculated with the previous steps. At this point, instead of going ahead and continuing to open the boxes, it is advisable to keep the current value and not pay the cost of the $k-1$th box.\\
+To analyze the result of the problem, it will be enough to print on screen the content of $matrix[0][0]$.
 \end{homeworkProblem}
 
 \pagebreak
@@ -778,7 +777,26 @@ For the second part of this exercise points 1-4 must be repeated and:
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
-	Manca solo lui
+The problem of the last exercise cannot be solved with a quick algorthm as it must be traced back to an \textit{NP-Complete} problem.\\
+The complexity class of decision problems for which answers can be checked for correctness, given a certificate, by an algorithm whose run time is polynomial in the size of the input (that is, it is NP) and no other NP problem is more than a polynomial factor harder.	\\
+
+The problem has as its objective a $k$ value that cannot be exceeded. There is also a set $J$ composed of $n$ tasks and for each $j \in J$ we know beforehand the time $s_j$, the time in which the task $j$, the deadline $d_j$, the time in which it must be terminated must start, and the value $l_j \in N$ which represents the length of the interval to execute the task.Tasks, once started, cannot be paused and deadline $d_j$ is always after the beginning $s_j$.\\
+Our problem, through association with the Subset sum Problem, can be associated with the NP-hard type, of which we know that each instance must be solvable.\\
+To solve our problem using the known algorithm it is necessary to set some variables. Supposing the valence of the summation $\displaystyle \sum_ {j = 1} ^ {n} l_ {j} = S$ and having a set of integers $I = \{i_1, i_2, ..., i_n\} $ and a value $k$ which represents task, where:
+
+\begin{itemize}[itemsep=1pt, topsep=1pt]
+	\item each key $i$ will have $s_{ij}$ (with $j \in N$) which represents the start time set to 0.
+	\item each key $i$ will have $d_{ij}$ (with $j \in N$) which in this case represents the deadline set to $S+1$.
+	\item Each task $i$ will have $l_{ij}$ (with $j \in N$) which represents the duration initialized to $l_j$.\\
+\end{itemize}
+
+Then the Subset sum problem will be able to find a subset of elements from $I$ that will reach $k$.\\
+Now we define the $N+1$th task which has a start time equal to $S$, a deadline in $S+1$ and a duration of 1.\\
+Having bound the $N+1$th task in the interval $[S, S+1]$ any previous grouping of the subset of tasks that satisfies the sum to $k$, which will also lead to the completion of the $N+1$-th task , will imply the resolution of the objectives by induction in the pre-established time.\\
+If each task, which will vary in the subset of 1 to $n$, will be executed within $W$ this will mean that the machine will have no rest time and that the corresponding numbers $l_{i_k}$ in the example of the Subset Sum will reach exactly $W$. Deduces that all tasks were performed before the deadline.\\
+To support the previous demonstration, the NP problem definition helps us. In fact, given a possible solution, to consider such a problem it is necessary an efficient certificate of correctness that works in polynomial time.\\
+For each instance of the problem, a valid certificate could be the expiration of each task.\\
+Having said that, being both a NP-Hard problem and a NP-problem, it has been shown that it is a NP-complete.
 \end{homeworkProblem}
 
 \pagebreak
