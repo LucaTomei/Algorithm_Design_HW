@@ -365,7 +365,7 @@ lista_nuvole = [];for nodo in lista_nodi:     nuvola = []    nuvola.append(no
 for i in edgelist:    node1=int(i[0])    node2=int(i[1])    nuvola1 = nuvola2 = []    for nuv in lista_nuvole:        if node1 in nuv :   nuvola1 = nuv         if node2 in nuv :   nuvola2 = nuv    peso= i[2].get("weight")    for n1 in nuvola1:        for n2 in nuvola2:            if(not(n1 == node1 and n2 == node2)) :                peso1=G_complete.get_edge_data(n1,n2).get("weight")                if(not peso1):                    NewGraph.add_edge(n1, n2, weight=peso+1)                    G_complete[n1][n2]['weight']=peso+1                else:   NewGraph.add_edge(n1, n2, weight=peso)               nuvola3 = nuvola1.extend(nuvola2)    nuvola1 = nuvola3    lista_nuvole.remove(nuvola2)
 \end{lstlisting}
 
-The sum of the weight of the edges of the complete graph is obtained by scrolling the arc list through an instruction for adding to a counter the weight of each arc purchased through the get function.
+The sum of the weight of the edges of the complete graph is obtained by iterating the arc list through an instruction for adding to a counter the weight of each arc purchased through the get function.
 
 \begin{lstlisting}[language=Python]
 summ=0for i in G_complete.edges:  summ += G_complete.get_edge_data(i[0],i[1]).get("weight")
@@ -780,7 +780,7 @@ For the second part of this exercise points 1-4 must be repeated and:
 The problem of the last exercise cannot be solved with a quick algorthm as it must be traced back to an \textit{NP-Complete} problem.\\
 The complexity class of decision problems for which answers can be checked for correctness, given a certificate, by an algorithm whose run time is polynomial in the size of the input (that is, it is NP) and no other NP problem is more than a polynomial factor harder.	\\
 
-The problem has as its objective a $k$ value that cannot be exceeded. There is also a set $J$ composed of $n$ tasks and for each $j \in J$ we know beforehand the time $s_j$, the time in which the task $j$, the deadline $d_j$, the time in which it must be terminated must start, and the value $l_j \in N$ which represents the length of the interval to execute the task.Tasks, once started, cannot be paused and deadline $d_j$ is always after the beginning $s_j$.\\
+The goal of the problem is that cannot be exceeded the $k$ value. There is also a set $J$ composed of $n$ tasks and for each $j \in J$ we know beforehand the time $s_j$, the time in which the task $j$, the deadline $d_j$, the time in which it must be terminated must start, and the value $l_j \in N$ which represents the length of the interval to execute the task.Tasks, once started, cannot be paused and deadline $d_j$ is always after the beginning $s_j$.\\
 Our problem, through association with the Subset sum Problem, can be associated with the NP-hard type, of which we know that each instance must be solvable.\\
 To solve our problem using the known algorithm it is necessary to set some variables. Supposing the valence of the summation $\displaystyle \sum_ {j = 1} ^ {n} l_ {j} = S$ and having a set of integers $I = \{i_1, i_2, ..., i_n\} $ and a value $k$ which represents task, where:
 
@@ -790,11 +790,11 @@ To solve our problem using the known algorithm it is necessary to set some varia
 	\item Each task $i$ will have $l_{ij}$ (with $j \in N$) which represents the duration initialized to $l_j$.\\
 \end{itemize}
 
-Then the Subset sum problem will be able to find a subset of elements from $I$ that will reach $k$.\\
+Then the Subset sum problem will be able to find a subset of elements from $I$ that will add up $k$.\\
 Now we define the $N+1$th task which has a start time equal to $S$, a deadline in $S+1$ and a duration of 1.\\
 Having bound the $N+1$th task in the interval $[S, S+1]$ any previous grouping of the subset of tasks that satisfies the sum to $k$, which will also lead to the completion of the $N+1$-th task , will imply the resolution of the objectives by induction in the pre-established time.\\
 If each task, which will vary in the subset of 1 to $n$, will be executed within $W$ this will mean that the machine will have no rest time and that the corresponding numbers $l_{i_k}$ in the example of the Subset Sum will reach exactly $W$. Deduces that all tasks were performed before the deadline.\\
-To support the previous demonstration, the NP problem definition helps us. In fact, given a possible solution, to consider such a problem it is necessary an efficient certificate of correctness that works in polynomial time.\\
+To support the previous demonstration, the NP problem definition help us. In fact, given a possible solution, to consider such a problem It Is necessary an efficient certificate of correctness that allow to the "checking Algorithm" of performing in polynomial time.\\
 For each instance of the problem, a valid certificate could be the expiration of each task.\\
 Having said that, being both a NP-Hard problem and a NP-problem, it has been shown that it is a NP-complete.
 \end{homeworkProblem}
